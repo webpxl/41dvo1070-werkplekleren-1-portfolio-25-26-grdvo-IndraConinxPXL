@@ -410,6 +410,7 @@ function initParallax() {
     });
 }
 
+
 // Uncomment to enable parallax effect
 // initParallax();
 
