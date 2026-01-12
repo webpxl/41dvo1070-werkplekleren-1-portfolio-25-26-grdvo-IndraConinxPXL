@@ -380,7 +380,7 @@ notificationStyles.textContent = `
 `;
 document.head.appendChild(notificationStyles);
 
-/* ========================================
+/* ==========================================
    UTILITY FUNCTIONS
    ========================================== */
 function debounce(func, wait = 20) {
