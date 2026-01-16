@@ -1,7 +1,3 @@
-/* ==========================================
-   PORTFOLIO V4 - JAVASCRIPT
-   ========================================== */
-
 'use strict';
 
 // DOM Element Selection
@@ -17,9 +13,6 @@ const DOM = {
     skillFills: document.querySelectorAll('.skill-fill')
 };
 
-/* ==========================================
-   INITIALIZATION
-   ========================================== */
 function init() {
     setFooterYear();
     setupEventListeners();
@@ -34,9 +27,6 @@ function setFooterYear() {
     }
 }
 
-/* ==========================================
-   EVENT LISTENERS
-   ========================================== */
 function setupEventListeners() {
     // Mobile menu toggle
     if (DOM.hamburger) {
@@ -67,9 +57,6 @@ function setupEventListeners() {
     window.addEventListener('scroll', debounce(handleScroll, 10));
 }
 
-/* ==========================================
-   NAVIGATION FUNCTIONS
-   ========================================== */
 function toggleMobileMenu() {
     const isOpen = DOM.navList.classList.toggle('is-open');
     animateHamburger(isOpen);
@@ -115,9 +102,6 @@ function smoothScroll(e) {
     });
 }
 
-/* ==========================================
-   SCROLL EFFECTS
-   ========================================== */
 let lastScrollY = 0;
 
 function handleScroll() {
@@ -168,9 +152,6 @@ function initScrollEffects() {
     handleScroll();
 }
 
-/* ==========================================
-   PROJECT FILTERING
-   ========================================== */
 function handleFilterClick(e) {
     const button = e.currentTarget;
     const category = button.getAttribute('data-category');
@@ -218,9 +199,6 @@ styleSheet.textContent = `
 `;
 document.head.appendChild(styleSheet);
 
-/* ==========================================
-   SKILL BARS ANIMATION
-   ========================================== */
 function animateSkillBars() {
     const skillsSection = document.getElementById('skills');
     if (!skillsSection) return;
@@ -240,9 +218,6 @@ function animateSkillBars() {
     observer.observe(skillsSection);
 }
 
-/* ==========================================
-   SCROLL ANIMATIONS
-   ========================================== */
 function initScrollAnimations() {
     const elementsToAnimate = document.querySelectorAll(
         '.info-card, .portfolio-card, .expertise-box, .hobby-box'
@@ -274,9 +249,6 @@ function initScrollAnimations() {
     animateSkillBars();
 }
 
-/* ==========================================
-   FORM HANDLING
-   ========================================== */
 function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -320,9 +292,6 @@ function validateForm(data) {
     return true;
 }
 
-/* ==========================================
-   NOTIFICATION SYSTEM
-   ========================================== */
 function displayNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -380,9 +349,6 @@ notificationStyles.textContent = `
 `;
 document.head.appendChild(notificationStyles);
 
-/* ==========================================
-   UTILITY FUNCTIONS
-   ========================================== */
 function debounce(func, wait = 20) {
     let timeout;
     return function executedFunction(...args) {
@@ -395,9 +361,6 @@ function debounce(func, wait = 20) {
     };
 }
 
-/* ==========================================
-   PARALLAX EFFECT (OPTIONAL)
-   ========================================== */
 function initParallax() {
     const heroSection = document.querySelector('.hero-section');
     if (!heroSection) return;
@@ -414,9 +377,6 @@ function initParallax() {
 // Uncomment to enable parallax effect
 // initParallax();
 
-/* ==========================================
-   CONSOLE BRANDING
-   ========================================== */
 function logBranding() {
     console.log(
         '%c 🎨 Portfolio Website V4 ',
@@ -429,9 +389,6 @@ function logBranding() {
     console.log('%c ✅ Alles geladen en klaar!', 'color: #2c7a3b; font-weight: bold; font-size: 14px;');
 }
 
-/* ==========================================
-   PAGE LOAD
-   ========================================== */
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         init();
